@@ -1,5 +1,3 @@
-# Laboratorio-RedVirtualizada-Monitoreo
-Laboratorio de virtualización con KVM/QEMU (Debian + Fedora) monitoreado con Zabbix dockerizado, acceso vía SSH Bastion Host y diagnóstico de alertas asistido por IA (Gemini).
 # 🖧 Laboratorio de Red Virtualizada con KVM/QEMU y Monitoreo Centralizado con Zabbix
 
 Laboratorio personal de virtualización y administración de sistemas: dos servidores Linux (Debian y Fedora) desplegados sobre KVM/QEMU, monitoreados de forma centralizada con **Zabbix** (dockerizado) y con una capa extra de **diagnóstico de alertas asistido por IA (Google Gemini)**.

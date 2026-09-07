@@ -117,9 +117,8 @@ Algunos de los problemas reales que aparecieron durante el armado del laboratori
 
 ## 📄 Documentación completa
 
-El manual técnico adjunto en el repo esta completo con cada comando, cada decisión de diseño explicada y el runbook completo de troubleshooting. 
-
-> Ajustá la ruta de arriba a donde efectivamente subas el PDF dentro del repositorio.
+El manual técnico completo — con cada comando, cada decisión de diseño explicada y el runbook completo de troubleshooting — está disponible en:
+Manual_Laboratorio_KVM_Zabbix.pdf
 
 ## 🗺️ Próximos pasos
 

@@ -1,0 +1,50 @@
+try {
+    var params = JSON.parse(value);
+    var subject = params.alert_subject || 'Alerta de prueba en Zabbix';
+    var apiKey = params.api_key;
+    var model = params.model || 'gemini-3.6-flash';
+
+    if (!apiKey || apiKey === '') {
+        throw 'Falta el parametro api_key.';
+    }
+
+    var promptText = "La alerta: " + subject + " ocurrio en Zabbix.\n" +
+                     "Sugiere posibles causas y soluciones tecnicas para resolver este problema.\n" +
+                     "Respuesta concisa (maximo 10 lineas) con causas probables y 3 comandos Linux de triage/mitigacion.";
+
+    var request = new HttpRequest();
+    request.addHeader('Content-Type: application/json');
+    request.addHeader('x-goog-api-key: ' + apiKey.trim());
+
+    var payload = {
+        contents: [
+            {
+                parts: [
+                    { text: promptText }
+                ]
+            }
+        ],
+        generationConfig: {
+            temperature: 0.2,
+            maxOutputTokens: 400
+        }
+    };
+
+    var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model.trim() + ':generateContent';
+    var response = request.post(url, JSON.stringify(payload));
+
+    if (request.getStatus() !== 200) {
+        throw 'Error HTTP ' + request.getStatus() + ': ' + response;
+    }
+
+    var parsed = JSON.parse(response);
+    if (!parsed.candidates || parsed.candidates.length === 0) {
+        throw 'Respuesta vacia de Gemini: ' + response;
+    }
+
+    return parsed.candidates[0].content.parts[0].text.trim();
+
+} catch (error) {
+    Zabbix.log(3, '[Gemini Webhook] Error: ' + error);
+    throw 'Fallo en análisis IA: ' + error;
+}

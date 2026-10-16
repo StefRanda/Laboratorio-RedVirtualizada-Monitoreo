@@ -118,20 +118,7 @@ Algunos de los problemas reales que aparecieron durante el armado del laboratori
 El manual técnico completo — con cada comando, cada decisión de diseño explicada y el runbook completo de troubleshooting — está disponible en:
 Manual_Laboratorio_KVM_Zabbix.pdf
 
-## 🗺️ Próximos pasos
 
-**Cierre de la etapa 1**
-- [ ] Restringir las VLANs permitidas en los troncales (`allowed vlan`) y apagar los puertos sin uso.
-- [ ] Configurar DHCP (pool y relay).
-- [ ] Crear una plantilla personalizada en Zabbix.
-- [ ] Integrar Zabbix con Grafana para armar dashboards más completos.
-
-**Etapa 2: conexión entre sedes**
-- [ ] Sumar las sucursales 2 y 3 al laboratorio.
-- [ ] Conectar las sedes por VPN.
-
-**Etapa 3: enlaces redundantes**
-- [ ] Agregar EtherChannel entre los switches.
 ## 👤 Autor
 
 **STEFANIA ELIANA RANDAZZO** — Estudiante de Analista de Sistemas · Técnico Jr. en Redes (CCNA 1-2-3) · DevOps

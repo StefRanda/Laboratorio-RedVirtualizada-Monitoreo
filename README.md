@@ -120,10 +120,18 @@ Manual_Laboratorio_KVM_Zabbix.pdf
 
 ## 🗺️ Próximos pasos
 
-- [ ] Migrar el acceso SSH a autenticación por llave pública/privada, eliminando contraseñas interactivas.
-- [ ] Automatizar con Bash los respaldos periódicos de las configuraciones críticas.
-- [ ] Evaluar la migración a Zabbix Agent 2 para reporte de disponibilidad también en modo activo.
+**Cierre de la etapa 1**
+- [ ] Restringir las VLANs permitidas en los troncales (`allowed vlan`) y apagar los puertos sin uso.
+- [ ] Configurar DHCP (pool y relay).
+- [ ] Crear una plantilla personalizada en Zabbix.
+- [ ] Integrar Zabbix con Grafana para armar dashboards más completos.
 
+**Etapa 2: conexión entre sedes**
+- [ ] Sumar las sucursales 2 y 3 al laboratorio.
+- [ ] Conectar las sedes por VPN.
+
+**Etapa 3: enlaces redundantes**
+- [ ] Agregar EtherChannel entre los switches.
 ## 👤 Autor
 
 **STEFANIA ELIANA RANDAZZO** — Estudiante de Analista de Sistemas · Técnico Jr. en Redes (CCNA 1-2-3) · DevOps
